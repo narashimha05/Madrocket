@@ -23,14 +23,14 @@ export default function LoginPage() {
   return (
     <div className="bg-gray-100 flex justify-center items-center h-screen">
       <div className="w-1/2 h-screen hidden lg:block">
-          <img src="https://placehold.co/800x/667fff/ffffff.png?text=Your+Image&font=Montserrat" alt="Placeholder Image" className="object-cover w-full h-full" />
+          <img src="https://img.freepik.com/free-vector/dashboard-analytics-computer-performance-evaluation-chart-screen-statistics-analysis-infographic-assessment-business-report-display-isolated-concept-metaphor-illustration_335657-1149.jpg?ga=GA1.1.1210093342.1735416617&semt=ais_hybrid" className="h-full" />
       </div>
       <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
         <h1 className="text-2xl font-semibold mb-4 ">Login</h1>
         <form onSubmit={handleLogin} className="w-[300px] text-center">
           <input
-            type="email"
-            placeholder="Email"
+            type="username"
+            placeholder="username"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
