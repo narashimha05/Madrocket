@@ -16,7 +16,7 @@ export default function LoginPage() {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/home");
     } catch (error) {
-      alert("Login Failed: " + "Invalid email or password");
+      alert("Login Failed: " + "Invalid username or password");
     }
   };
 
