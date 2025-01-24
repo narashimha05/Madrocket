@@ -21,7 +21,14 @@ export default function StudentsPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [loadingId, setLoadingId] = useState(false);
   const [loading, setLoading] = useState(false);  
-
+  
+  // if (user === undefined || user === null) {
+  //   return (
+  //     <div className="flex h-screen justify-center items-center">
+  //       <SyncLoader />
+  //     </div>
+  //   );
+  // }
   const handleDelete = async (studentId) => {
     setLoadingId(studentId); 
     try {
@@ -36,13 +43,6 @@ export default function StudentsPage() {
       setLoadingId(null); 
     }
   };
-
-  useEffect(() => {
-    if (!user) router.push("/"); 
-  }, [user, router]);
-
-  if (!user) return null; 
-
   const fetchStudents = async () => {
     setLoading(true);
     const querySnapshot = await getDocs(collection(db, "students"));
@@ -53,8 +53,12 @@ export default function StudentsPage() {
     setLoading(false);
     setStudents(studentsList);
   };
-
-
+  
+  useEffect(() => {
+    if (user === null) {
+      router.push("/"); 
+    }
+  }, [user, router]);
   useEffect(() => {
     fetchStudents();
   }, []);
