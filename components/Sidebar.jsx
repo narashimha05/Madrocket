@@ -11,8 +11,8 @@ export default function Sidebar() {
 
   const logout = async () => {
     try {
-      await signOut(auth); // Sign out first
-      await router.push("/"); // Then navigate to the login page
+      await signOut(auth); 
+      await router.push("/"); 
     } catch (error) {
       console.error("Error logging out:", error);
     }
@@ -24,21 +24,21 @@ export default function Sidebar() {
         <p className="text-lg sm:text-xl md:text-3xl mt-4">Dashboard</p>
       </div>
       <div
-        onClick={() => router.push("/home")} // Use Next.js router for navigation
+        onClick={() => router.push("/home")} 
         className="flex items-center text-left text-md sm:text-lg hover:bg-[#ddd] w-full p-[10px] mt-6 cursor-pointer"
       >
         <IoHomeSharp />
         <span className="pl-4">Home</span>
       </div>
       <div
-        onClick={() => router.push("/students")} // Use Next.js router for navigation
+        onClick={() => router.push("/students")} 
         className="flex items-center text-left text-md sm:text-lg hover:bg-[#ddd] w-full p-[10px] cursor-pointer"
       >
         <MdDashboard />
         <span className="pl-4">Students Page</span>
       </div>
       <div
-        onClick={logout} // Call the logout function
+        onClick={logout}
         className="flex items-center text-left text-md sm:text-lg hover:bg-[#ddd] w-full p-[10px] cursor-pointer"
       >
         <CiLogout />

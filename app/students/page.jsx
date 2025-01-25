@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { signOut } from "firebase/auth";
-import { auth, db } from "../../firebaseConfig";
+import { db } from "../../firebaseConfig";
 import { useRouter } from "next/navigation";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import AddStudent from "../../components/AddStudent";
@@ -117,8 +116,8 @@ export default function StudentsPage() {
                 <td className="px-6 py-4">{student.gender}</td>
                 <td className="px-6 py-4">{student.phone}</td>
                 <td className="px-6 py-4 gap-2 flex">
-                  <button><AiFillEye size={24}/></button>
-                  <button><MdEdit size={24}/></button>
+                  <button onClick={()=> router.push(`/view/${student.id}`)}><AiFillEye size={24}/></button>
+                  <button onClick={()=> router.push(`/edit/${student.id}`)}><MdEdit size={24}/></button>
                   <button
             onClick={() => handleDelete(student.id)}
             disabled={loadingId === student.id} 
